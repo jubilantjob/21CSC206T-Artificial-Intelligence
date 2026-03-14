@@ -1,9 +1,10 @@
 project:
   type: website
-
+  output-dir: docs
 website:
-  title: "Sample_website"
-  navbar:
+  title: "21CSC206T- Artificial Intelligence
+"
+  navbar: 
     left:
       - href: index.qmd
         text: Home
