@@ -1,0 +1,87 @@
+---
+title: "Introduction to Artificial Intelligence"
+author: "Jubilant J"
+code-fold: true
+jupyter: python3
+---
+
+## Course Overview
+Artificial Intelligence (AI) is one of the most transformative technologies of the 21st century. It focuses on designing intelligent systems capable of performing tasks that typically require human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. AI has become a foundational technology powering applications across diverse domains including healthcare, finance, transportation, cybersecurity, robotics, and smart infrastructure.
+
+This course provides a foundational understanding of Artificial Intelligence for second-year B.Tech students. It introduces the fundamental concepts, techniques, and methodologies used to build intelligent systems. Students will explore how machines represent knowledge, learn from data, and make decisions using algorithms and models.
+
+## Why Study Artificial Intelligence?
+Artificial Intelligence is rapidly shaping the future of technology and society. Engineers equipped with AI knowledge are able to design systems that can automate complex processes, analyze large volumes of data, and develop intelligent applications that improve efficiency and innovation.
+
+Key motivations for studying AI include:
+
+- Understanding how machines can simulate intelligent behavior  
+- Developing problem-solving techniques using computational models  
+- Designing systems that can learn from data and adapt to new situations  
+- Enabling automation and intelligent decision-making in real-world applications  
+
+## What is Artificial Intelligence?
+Artificial Intelligence can be broadly defined as the science and engineering of creating machines capable of intelligent behavior. An intelligent system is typically characterized by its ability to:
+
+- Perceive its environment  
+- Represent and process knowledge  
+- Reason and make decisions  
+- Learn from experience  
+- Adapt to changing conditions  
+
+AI systems attempt to replicate or augment human cognitive abilities through algorithms, data, and computational models.
+
+## Key Areas of Artificial Intelligence
+Artificial Intelligence is a multidisciplinary field that intersects with computer science, mathematics, statistics, neuroscience, and cognitive science. Major subfields of AI include:
+
+- **Machine Learning:** Algorithms that allow systems to learn patterns from data.
+- **Natural Language Processing (NLP):** Enabling machines to understand and generate human language.
+- **Computer Vision:** Allowing machines to interpret and analyze visual information from images and videos.
+- **Knowledge Representation and Reasoning:** Structuring information so that machines can reason logically.
+- **Robotics:** Integrating AI with physical systems to perform autonomous tasks.
+- **Expert Systems:** Systems designed to mimic decision-making abilities of human experts.
+
+## Applications of Artificial Intelligence
+AI technologies are widely used across industries. Some prominent applications include:
+
+- **Healthcare:** Disease diagnosis, medical imaging analysis, and personalized treatment.
+- **Finance:** Fraud detection, algorithmic trading, and risk analysis.
+- **Transportation:** Autonomous vehicles and intelligent traffic management.
+- **Cybersecurity:** Threat detection and anomaly detection systems.
+- **E-commerce:** Recommendation systems and customer behavior analysis.
+- **Smart Cities:** Intelligent infrastructure management and predictive analytics.
+
+## Learning Outcomes of the Course
+By the end of this course, students will be able to:
+
+- Understand the fundamental concepts and terminology of Artificial Intelligence.
+- Describe different approaches used in designing intelligent systems.
+- Apply basic AI problem-solving techniques and algorithms.
+- Analyze the role of AI in real-world applications.
+- Develop a conceptual understanding of modern AI technologies such as machine learning and intelligent agents.
+
+## Course Approach
+This course combines theoretical concepts with practical insights. Students will be exposed to case studies, algorithmic approaches, and introductory programming implementations related to AI systems. The aim is to build a strong conceptual foundation that will support advanced learning in Machine Learning, Deep Learning, and Intelligent Systems in later semesters.
+
+Artificial Intelligence is not just a technological advancement—it represents a paradigm shift in how systems interact with data, environments, and humans. Understanding AI will enable future engineers to design innovative solutions for complex global challenges.
+
+### Sample code 
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+

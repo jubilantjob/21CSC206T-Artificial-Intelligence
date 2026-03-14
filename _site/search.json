@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "M1- Module_1.html",
+    "href": "M1- Module_1.html",
+    "title": "Foundations of Artificial Intelligence",
+    "section": "",
+    "text": "Artificial Intelligence (AI) focuses on designing intelligence in artificial devices, a term coined by John McCarthy in 1956. Intelligence is defined as the capability to acquire, understand, and apply knowledge to achieve worldly goals. AI studies mental faculties through computational models and treats intellectual processes as computational processes. An AI program demonstrates intelligence that equals or exceeds human intelligence in specific tasks. AI is a unique field that shares boundaries with Mathematics, Computer Science, Philosophy, Psychology, Biology, and Cognitive Science. It generally describes an attempt to build machines that can think, act, learn, and use knowledge to autonomously solve problems.\nDefinitions of AI\nThe definitions of AI are categorized based on measuring success against human performance versus rationality, and focusing on reasoning versus behavior.\n\nThink Human-Like (Cognitive Science Approach): Focuses on making computers think like machines with minds, automating human thinking activities such as decision-making and learning. It requires a precise model for human cognition to produce a sequence of reasoning steps similar to a human.\nThink Rationally (Laws of Thought Approach): The study of computational models that make it possible to perceive, reason, and act optimally. It formalizes the reasoning process using logical rules and inferences.\nAct Human-Like (Turing Test Approach): Creating machines that perform functions requiring human intelligence, making computers do things that people currently do better. The Turing Test evaluates this by having a machine attempt to fool an interrogator into believing it is human.\nAct Rationally (Rational Agent Approach): Emulating intelligent behavior via computational processes. It focuses on developing systems that act sufficiently, if not optimally, in all situations.\n\nStrong AI claims computers can think on a level equal to humans, whereas Weak AI states that thinking-like features can be added to computers to make them useful tools."
+  },
+  {
+    "objectID": "M1- Module_1.html#basics-of-ai",
+    "href": "M1- Module_1.html#basics-of-ai",
+    "title": "Foundations of Artificial Intelligence",
+    "section": "",
+    "text": "Artificial Intelligence (AI) focuses on designing intelligence in artificial devices, a term coined by John McCarthy in 1956. Intelligence is defined as the capability to acquire, understand, and apply knowledge to achieve worldly goals. AI studies mental faculties through computational models and treats intellectual processes as computational processes. An AI program demonstrates intelligence that equals or exceeds human intelligence in specific tasks. AI is a unique field that shares boundaries with Mathematics, Computer Science, Philosophy, Psychology, Biology, and Cognitive Science. It generally describes an attempt to build machines that can think, act, learn, and use knowledge to autonomously solve problems.\nDefinitions of AI\nThe definitions of AI are categorized based on measuring success against human performance versus rationality, and focusing on reasoning versus behavior.\n\nThink Human-Like (Cognitive Science Approach): Focuses on making computers think like machines with minds, automating human thinking activities such as decision-making and learning. It requires a precise model for human cognition to produce a sequence of reasoning steps similar to a human.\nThink Rationally (Laws of Thought Approach): The study of computational models that make it possible to perceive, reason, and act optimally. It formalizes the reasoning process using logical rules and inferences.\nAct Human-Like (Turing Test Approach): Creating machines that perform functions requiring human intelligence, making computers do things that people currently do better. The Turing Test evaluates this by having a machine attempt to fool an interrogator into believing it is human.\nAct Rationally (Rational Agent Approach): Emulating intelligent behavior via computational processes. It focuses on developing systems that act sufficiently, if not optimally, in all situations.\n\nStrong AI claims computers can think on a level equal to humans, whereas Weak AI states that thinking-like features can be added to computers to make them useful tools."
+  },
+  {
+    "objectID": "M1- Module_1.html#history-of-ai",
+    "href": "M1- Module_1.html#history-of-ai",
+    "title": "Foundations of Artificial Intelligence",
+    "section": "History of AI",
+    "text": "History of AI\nImportant milestones that laid the groundwork for AI include:\n\n1920-30s (1931): Goedel laid the foundation of Theoretical Computer Science with the first universal formal language.\n1936: Turing reformulated Goedel’s result.\n1956: John McCarthy coined “Artificial Intelligence” at the Dartmouth Conference.\n1957: Newell, Shaw, and Simon demonstrated the General Problem Solver (GPS).\n1958: John McCarthy invented Lisp at MIT.\n1959: Arthur Samuel wrote the first checkers program capable of challenging a world champion.\n1963: Ivan Sutherland introduced interactive graphics with Sketchpad.\n1966: Ross Quillian demonstrated semantic nets.\n1967: The Dendral program interpreted mass spectra (the first successful knowledge-based program for scientific reasoning), and Doug Engelbart invented the mouse.\n1968: Minsky and Papert published Perceptrons.\n1972: Alain Colmerauer developed Prolog.\nMid-80s: Neural Networks gained popularity with the Backpropagation algorithm.\n1990: Major advances occurred across machine learning, data mining, NLP, and virtual reality.\n1997: Deep Blue defeated World Chess Champion Kasparov.\n2002: iRobot introduced the Roomba vacuum cleaner."
+  },
+  {
+    "objectID": "M1- Module_1.html#foundations-and-sub-areas",
+    "href": "M1- Module_1.html#foundations-and-sub-areas",
+    "title": "Foundations of Artificial Intelligence",
+    "section": "Foundations and Sub-Areas",
+    "text": "Foundations and Sub-Areas\nAI foundations include Philosophy (issues of knowledge and belief), Psychology/Cognitive Science (problem-solving), Neuro-Science (brain architecture), Computer Science (algorithms, logic, inference), and Mathematics/Physics (statistical modeling).\nSub-areas and applications include: * Game Playing: Deep Blue beating Gary Kasparov. * Speech Recognition: PEGASUS interface for American Airlines. * Computer Vision: Face recognition, ALVINN autonomous driving system, and handwriting recognition. * Expert Systems: Diagnostic systems like MYCIN and Pathfinder, system configuration like DEC’s XCON, and financial decision-making for fraud detection. * Classification Systems: NASA’s systems for classifying stars and galaxies. * Natural Language Understanding: Translation of web pages and manuals. * Scheduling and Planning: DARPA’s DART system for logistics and manufacturing scheduling.\nAI is applied across business, engineering, manufacturing, medicine, education, and space shuttle scheduling."
+  },
+  {
+    "objectID": "M1- Module_1.html#building-ai-systems-and-intelligent-agents",
+    "href": "M1- Module_1.html#building-ai-systems-and-intelligent-agents",
+    "title": "Foundations of Artificial Intelligence",
+    "section": "Building AI Systems and Intelligent Agents",
+    "text": "Building AI Systems and Intelligent Agents\nBuilding intelligent systems involves three main components: 1. Perception: Experiencing the world through sensors like cameras or manual input of symptoms. 2. Reasoning: Inference, decision-making, and classification using an internal model (e.g., neural networks, Bayes networks). 3. Action: Interacting with the environment via actuators, such as steering a rover or synthesizing speech.\nAn Agent perceives its environment through sensors and acts upon it through actuators. A percept sequence is the complete history of an agent’s perceptual inputs. The agent’s behavior is defined by an agent function, which mathematically maps a percept sequence to an action, while the agent program is the concrete implementation running on the architecture. For example, in a vacuum-cleaner world, a reflex agent perceives its location and dirt status, choosing to move left, right, or suck up dirt."
+  },
+  {
+    "objectID": "M1- Module_1.html#problem-solving-and-state-space-search",
+    "href": "M1- Module_1.html#problem-solving-and-state-space-search",
+    "title": "Foundations of Artificial Intelligence",
+    "section": "Problem Solving and State Space Search",
+    "text": "Problem Solving and State Space Search\nAI addresses both common-place mundane tasks (recognizing objects, navigating) and expert tasks (medical diagnosis, chess). Problem solving generates solutions from observed data, characterized by goals, objects, and operations.\nA problem can be formulated as a state space search involving: * State: Specification of the values of all attributes of interest. * Initial State: Where the process starts. * Goal State: Acceptable solutions to the problem. * Operator/Actions: Rules that change one state into another, possessing preconditions and effects. * Path Cost: The step cost to execute actions.\n\nSearch Algorithms\nAlgorithm selection depends on completeness, optimality, time complexity, and space complexity.\n\nUninformed (Blind) Search\nThese algorithms use no problem-specific information to guide the search. * Breadth-First Search (BFS): Searches the goal along each breadth of the tree. It uses a NODE-LIST and adds new states to the end. BFS is complete and optimal (if all operators have the same cost), with time and space complexity of \\(O(b^d)\\). However, it requires exponential memory, making it ineffective for large search spaces. * Depth-First Search (DFS): Searches along the largest depth of the tree, adding new states to the front of the NODE-LIST. It takes exponential time \\(O(b^N)\\) and linear space \\(O(bN)\\). DFS is not complete as it may fail in infinite or cyclic spaces. * Iterative Deepening DFS (IDS): Combines BFS completeness and optimality with DFS memory efficiency. It searches iteratively with increasing depth limits. IDS is faster than BFS and DFS and is preferred for large search spaces with unknown solution depths.\n\n\nInformed (Heuristic) Search\nThese algorithms use heuristic functions—feedback mapping states to numerical desirability weights—to guide the search efficiently. * Greedy Best First Search: Uses \\(f(n) = h(n)\\), expanding nodes based strictly on the heuristic estimate to the goal. For example, using straight-line distances to navigate Romania. * A* Search Algorithm: Uses \\(f(n) = g(n) + h(n)\\), where \\(g(n)\\) is the cost to reach the node and \\(h(n)\\) is the estimated cost to the goal. It maintains an OPEN priority queue and a CLOSED list of evaluated nodes. A* is complete, optimally efficient, and admissible if the heuristic never overestimates the actual cost. * **Iterative Deepening A* (IDA*):** Eliminates A*’s memory constraints by using depth-first iterations guided by an \\(f(n)\\) cost threshold. It is complete, optimal, and uses linear space relative to the solution depth.\n\n\n\nPython cod example\n\n\nCode\nimport numpy as np \na=np.array([[1,2,3],[2,3,4],[3,5,6]])\nprint(a)\n\n\n[[1 2 3]\n [2 3 4]\n [3 5 6]]"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is my first website"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to Artificial Intelligence",
+    "section": "",
+    "text": "Artificial Intelligence (AI) is one of the most transformative technologies of the 21st century. It focuses on designing intelligent systems capable of performing tasks that typically require human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. AI has become a foundational technology powering applications across diverse domains including healthcare, finance, transportation, cybersecurity, robotics, and smart infrastructure.\nThis course provides a foundational understanding of Artificial Intelligence for second-year B.Tech students. It introduces the fundamental concepts, techniques, and methodologies used to build intelligent systems. Students will explore how machines represent knowledge, learn from data, and make decisions using algorithms and models."
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "Introduction to Artificial Intelligence",
+    "section": "",
+    "text": "Artificial Intelligence (AI) is one of the most transformative technologies of the 21st century. It focuses on designing intelligent systems capable of performing tasks that typically require human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. AI has become a foundational technology powering applications across diverse domains including healthcare, finance, transportation, cybersecurity, robotics, and smart infrastructure.\nThis course provides a foundational understanding of Artificial Intelligence for second-year B.Tech students. It introduces the fundamental concepts, techniques, and methodologies used to build intelligent systems. Students will explore how machines represent knowledge, learn from data, and make decisions using algorithms and models."
+  },
+  {
+    "objectID": "index.html#why-study-artificial-intelligence",
+    "href": "index.html#why-study-artificial-intelligence",
+    "title": "Introduction to Artificial Intelligence",
+    "section": "Why Study Artificial Intelligence?",
+    "text": "Why Study Artificial Intelligence?\nArtificial Intelligence is rapidly shaping the future of technology and society. Engineers equipped with AI knowledge are able to design systems that can automate complex processes, analyze large volumes of data, and develop intelligent applications that improve efficiency and innovation.\nKey motivations for studying AI include:\n\nUnderstanding how machines can simulate intelligent behavior\n\nDeveloping problem-solving techniques using computational models\n\nDesigning systems that can learn from data and adapt to new situations\n\nEnabling automation and intelligent decision-making in real-world applications"
+  },
+  {
+    "objectID": "index.html#what-is-artificial-intelligence",
+    "href": "index.html#what-is-artificial-intelligence",
+    "title": "Introduction to Artificial Intelligence",
+    "section": "What is Artificial Intelligence?",
+    "text": "What is Artificial Intelligence?\nArtificial Intelligence can be broadly defined as the science and engineering of creating machines capable of intelligent behavior. An intelligent system is typically characterized by its ability to:\n\nPerceive its environment\n\nRepresent and process knowledge\n\nReason and make decisions\n\nLearn from experience\n\nAdapt to changing conditions\n\nAI systems attempt to replicate or augment human cognitive abilities through algorithms, data, and computational models."
+  },
+  {
+    "objectID": "index.html#key-areas-of-artificial-intelligence",
+    "href": "index.html#key-areas-of-artificial-intelligence",
+    "title": "Introduction to Artificial Intelligence",
+    "section": "Key Areas of Artificial Intelligence",
+    "text": "Key Areas of Artificial Intelligence\nArtificial Intelligence is a multidisciplinary field that intersects with computer science, mathematics, statistics, neuroscience, and cognitive science. Major subfields of AI include:\n\nMachine Learning: Algorithms that allow systems to learn patterns from data.\nNatural Language Processing (NLP): Enabling machines to understand and generate human language.\nComputer Vision: Allowing machines to interpret and analyze visual information from images and videos.\nKnowledge Representation and Reasoning: Structuring information so that machines can reason logically.\nRobotics: Integrating AI with physical systems to perform autonomous tasks.\nExpert Systems: Systems designed to mimic decision-making abilities of human experts."
+  },
+  {
+    "objectID": "index.html#applications-of-artificial-intelligence",
+    "href": "index.html#applications-of-artificial-intelligence",
+    "title": "Introduction to Artificial Intelligence",
+    "section": "Applications of Artificial Intelligence",
+    "text": "Applications of Artificial Intelligence\nAI technologies are widely used across industries. Some prominent applications include:\n\nHealthcare: Disease diagnosis, medical imaging analysis, and personalized treatment.\nFinance: Fraud detection, algorithmic trading, and risk analysis.\nTransportation: Autonomous vehicles and intelligent traffic management.\nCybersecurity: Threat detection and anomaly detection systems.\nE-commerce: Recommendation systems and customer behavior analysis.\nSmart Cities: Intelligent infrastructure management and predictive analytics."
+  },
+  {
+    "objectID": "index.html#learning-outcomes-of-the-course",
+    "href": "index.html#learning-outcomes-of-the-course",
+    "title": "Introduction to Artificial Intelligence",
+    "section": "Learning Outcomes of the Course",
+    "text": "Learning Outcomes of the Course\nBy the end of this course, students will be able to:\n\nUnderstand the fundamental concepts and terminology of Artificial Intelligence.\nDescribe different approaches used in designing intelligent systems.\nApply basic AI problem-solving techniques and algorithms.\nAnalyze the role of AI in real-world applications.\nDevelop a conceptual understanding of modern AI technologies such as machine learning and intelligent agents."
+  },
+  {
+    "objectID": "index.html#course-approach",
+    "href": "index.html#course-approach",
+    "title": "Introduction to Artificial Intelligence",
+    "section": "Course Approach",
+    "text": "Course Approach\nThis course combines theoretical concepts with practical insights. Students will be exposed to case studies, algorithmic approaches, and introductory programming implementations related to AI systems. The aim is to build a strong conceptual foundation that will support advanced learning in Machine Learning, Deep Learning, and Intelligent Systems in later semesters.\nArtificial Intelligence is not just a technological advancement—it represents a paradigm shift in how systems interact with data, environments, and humans. Understanding AI will enable future engineers to design innovative solutions for complex global challenges.\n\nSample code\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
+  }
+]

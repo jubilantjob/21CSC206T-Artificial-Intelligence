@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.35">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jubilant J">
+
+<title>Foundations of Artificial Intelligence – Sample_website</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Sample_website</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./M1- Module_1.html" aria-current="page"> 
+<span class="menu-text">Module-1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basics-of-ai" id="toc-basics-of-ai" class="nav-link active" data-scroll-target="#basics-of-ai">Basics of AI</a></li>
+  <li><a href="#history-of-ai" id="toc-history-of-ai" class="nav-link" data-scroll-target="#history-of-ai">History of AI</a></li>
+  <li><a href="#foundations-and-sub-areas" id="toc-foundations-and-sub-areas" class="nav-link" data-scroll-target="#foundations-and-sub-areas">Foundations and Sub-Areas</a></li>
+  <li><a href="#building-ai-systems-and-intelligent-agents" id="toc-building-ai-systems-and-intelligent-agents" class="nav-link" data-scroll-target="#building-ai-systems-and-intelligent-agents">Building AI Systems and Intelligent Agents</a></li>
+  <li><a href="#problem-solving-and-state-space-search" id="toc-problem-solving-and-state-space-search" class="nav-link" data-scroll-target="#problem-solving-and-state-space-search">Problem Solving and State Space Search</a>
+  <ul class="collapse">
+  <li><a href="#search-algorithms" id="toc-search-algorithms" class="nav-link" data-scroll-target="#search-algorithms">Search Algorithms</a></li>
+  <li><a href="#python-cod-example" id="toc-python-cod-example" class="nav-link" data-scroll-target="#python-cod-example">Python cod example</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Foundations of Artificial Intelligence</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jubilant J </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="basics-of-ai" class="level2">
+<h2 class="anchored" data-anchor-id="basics-of-ai">Basics of AI</h2>
+<p>Artificial Intelligence (AI) focuses on designing intelligence in artificial devices, a term coined by John McCarthy in 1956. Intelligence is defined as the capability to acquire, understand, and apply knowledge to achieve worldly goals. AI studies mental faculties through computational models and treats intellectual processes as computational processes. An AI program demonstrates intelligence that equals or exceeds human intelligence in specific tasks. AI is a unique field that shares boundaries with Mathematics, Computer Science, Philosophy, Psychology, Biology, and Cognitive Science. It generally describes an attempt to build machines that can think, act, learn, and use knowledge to autonomously solve problems.</p>
+<p><strong>Definitions of AI</strong></p>
+<p>The definitions of AI are categorized based on measuring success against human performance versus rationality, and focusing on reasoning versus behavior.</p>
+<ul>
+<li><p><strong>Think Human-Like (Cognitive Science Approach):</strong> Focuses on making computers think like machines with minds, automating human thinking activities such as decision-making and learning. It requires a precise model for human cognition to produce a sequence of reasoning steps similar to a human.</p></li>
+<li><p><strong>Think Rationally (Laws of Thought Approach):</strong> The study of computational models that make it possible to perceive, reason, and act optimally. It formalizes the reasoning process using logical rules and inferences.</p></li>
+<li><p><strong>Act Human-Like (Turing Test Approach):</strong> Creating machines that perform functions requiring human intelligence, making computers do things that people currently do better. The Turing Test evaluates this by having a machine attempt to fool an interrogator into believing it is human.</p></li>
+<li><p><strong>Act Rationally (Rational Agent Approach):</strong> Emulating intelligent behavior via computational processes. It focuses on developing systems that act sufficiently, if not optimally, in all situations.</p></li>
+</ul>
+<p><em>Strong AI</em> claims computers can think on a level equal to humans, whereas <em>Weak AI</em> states that thinking-like features can be added to computers to make them useful tools.</p>
+</section>
+<section id="history-of-ai" class="level2">
+<h2 class="anchored" data-anchor-id="history-of-ai">History of AI</h2>
+<p>Important milestones that laid the groundwork for AI include:</p>
+<ul>
+<li><strong>1920-30s (1931):</strong> Goedel laid the foundation of Theoretical Computer Science with the first universal formal language.</li>
+<li><strong>1936:</strong> Turing reformulated Goedel’s result.</li>
+<li><strong>1956:</strong> John McCarthy coined “Artificial Intelligence” at the Dartmouth Conference.</li>
+<li><strong>1957:</strong> Newell, Shaw, and Simon demonstrated the General Problem Solver (GPS).</li>
+<li><strong>1958:</strong> John McCarthy invented Lisp at MIT.</li>
+<li><strong>1959:</strong> Arthur Samuel wrote the first checkers program capable of challenging a world champion.</li>
+<li><strong>1963:</strong> Ivan Sutherland introduced interactive graphics with Sketchpad.</li>
+<li><strong>1966:</strong> Ross Quillian demonstrated semantic nets.</li>
+<li><strong>1967:</strong> The Dendral program interpreted mass spectra (the first successful knowledge-based program for scientific reasoning), and Doug Engelbart invented the mouse.</li>
+<li><strong>1968:</strong> Minsky and Papert published <em>Perceptrons</em>.</li>
+<li><strong>1972:</strong> Alain Colmerauer developed Prolog.</li>
+<li><strong>Mid-80s:</strong> Neural Networks gained popularity with the Backpropagation algorithm.</li>
+<li><strong>1990:</strong> Major advances occurred across machine learning, data mining, NLP, and virtual reality.</li>
+<li><strong>1997:</strong> Deep Blue defeated World Chess Champion Kasparov.</li>
+<li><strong>2002:</strong> iRobot introduced the Roomba vacuum cleaner.</li>
+</ul>
+</section>
+<section id="foundations-and-sub-areas" class="level2">
+<h2 class="anchored" data-anchor-id="foundations-and-sub-areas">Foundations and Sub-Areas</h2>
+<p>AI foundations include Philosophy (issues of knowledge and belief), Psychology/Cognitive Science (problem-solving), Neuro-Science (brain architecture), Computer Science (algorithms, logic, inference), and Mathematics/Physics (statistical modeling).</p>
+<p>Sub-areas and applications include: * <strong>Game Playing:</strong> Deep Blue beating Gary Kasparov. * <strong>Speech Recognition:</strong> PEGASUS interface for American Airlines. * <strong>Computer Vision:</strong> Face recognition, ALVINN autonomous driving system, and handwriting recognition. * <strong>Expert Systems:</strong> Diagnostic systems like MYCIN and Pathfinder, system configuration like DEC’s XCON, and financial decision-making for fraud detection. * <strong>Classification Systems:</strong> NASA’s systems for classifying stars and galaxies. * <strong>Natural Language Understanding:</strong> Translation of web pages and manuals. * <strong>Scheduling and Planning:</strong> DARPA’s DART system for logistics and manufacturing scheduling.</p>
+<p>AI is applied across business, engineering, manufacturing, medicine, education, and space shuttle scheduling.</p>
+</section>
+<section id="building-ai-systems-and-intelligent-agents" class="level2">
+<h2 class="anchored" data-anchor-id="building-ai-systems-and-intelligent-agents">Building AI Systems and Intelligent Agents</h2>
+<p>Building intelligent systems involves three main components: 1. <strong>Perception:</strong> Experiencing the world through sensors like cameras or manual input of symptoms. 2. <strong>Reasoning:</strong> Inference, decision-making, and classification using an internal model (e.g., neural networks, Bayes networks). 3. <strong>Action:</strong> Interacting with the environment via actuators, such as steering a rover or synthesizing speech.</p>
+<p>An <strong>Agent</strong> perceives its environment through sensors and acts upon it through actuators. A percept sequence is the complete history of an agent’s perceptual inputs. The agent’s behavior is defined by an <strong>agent function</strong>, which mathematically maps a percept sequence to an action, while the <strong>agent program</strong> is the concrete implementation running on the architecture. For example, in a vacuum-cleaner world, a reflex agent perceives its location and dirt status, choosing to move left, right, or suck up dirt.</p>
+</section>
+<section id="problem-solving-and-state-space-search" class="level2">
+<h2 class="anchored" data-anchor-id="problem-solving-and-state-space-search">Problem Solving and State Space Search</h2>
+<p>AI addresses both common-place mundane tasks (recognizing objects, navigating) and expert tasks (medical diagnosis, chess). Problem solving generates solutions from observed data, characterized by goals, objects, and operations.</p>
+<p>A problem can be formulated as a <strong>state space search</strong> involving: * <strong>State:</strong> Specification of the values of all attributes of interest. * <strong>Initial State:</strong> Where the process starts. * <strong>Goal State:</strong> Acceptable solutions to the problem. * <strong>Operator/Actions:</strong> Rules that change one state into another, possessing preconditions and effects. * <strong>Path Cost:</strong> The step cost to execute actions.</p>
+<section id="search-algorithms" class="level3">
+<h3 class="anchored" data-anchor-id="search-algorithms">Search Algorithms</h3>
+<p>Algorithm selection depends on completeness, optimality, time complexity, and space complexity.</p>
+<section id="uninformed-blind-search" class="level4">
+<h4 class="anchored" data-anchor-id="uninformed-blind-search">Uninformed (Blind) Search</h4>
+<p>These algorithms use no problem-specific information to guide the search. * <strong>Breadth-First Search (BFS):</strong> Searches the goal along each breadth of the tree. It uses a NODE-LIST and adds new states to the end. BFS is complete and optimal (if all operators have the same cost), with time and space complexity of <span class="math inline">\(O(b^d)\)</span>. However, it requires exponential memory, making it ineffective for large search spaces. * <strong>Depth-First Search (DFS):</strong> Searches along the largest depth of the tree, adding new states to the front of the NODE-LIST. It takes exponential time <span class="math inline">\(O(b^N)\)</span> and linear space <span class="math inline">\(O(bN)\)</span>. DFS is not complete as it may fail in infinite or cyclic spaces. * <strong>Iterative Deepening DFS (IDS):</strong> Combines BFS completeness and optimality with DFS memory efficiency. It searches iteratively with increasing depth limits. IDS is faster than BFS and DFS and is preferred for large search spaces with unknown solution depths.</p>
+</section>
+<section id="informed-heuristic-search" class="level4">
+<h4 class="anchored" data-anchor-id="informed-heuristic-search">Informed (Heuristic) Search</h4>
+<p>These algorithms use heuristic functions—feedback mapping states to numerical desirability weights—to guide the search efficiently. * <strong>Greedy Best First Search:</strong> Uses <span class="math inline">\(f(n) = h(n)\)</span>, expanding nodes based strictly on the heuristic estimate to the goal. For example, using straight-line distances to navigate Romania. * <strong>A* Search Algorithm:</strong> Uses <span class="math inline">\(f(n) = g(n) + h(n)\)</span>, where <span class="math inline">\(g(n)\)</span> is the cost to reach the node and <span class="math inline">\(h(n)\)</span> is the estimated cost to the goal. It maintains an OPEN priority queue and a CLOSED list of evaluated nodes. A* is complete, optimally efficient, and admissible if the heuristic never overestimates the actual cost. * **Iterative Deepening A* (IDA*):** Eliminates A*’s memory constraints by using depth-first iterations guided by an <span class="math inline">\(f(n)\)</span> cost threshold. It is complete, optimal, and uses linear space relative to the solution depth.</p>
+</section>
+</section>
+<section id="python-cod-example" class="level3">
+<h3 class="anchored" data-anchor-id="python-cod-example">Python cod example</h3>
+<div id="a232cd9e" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>np.array([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>]])</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1 2 3]
+ [2 3 4]
+ [3 5 6]]</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
